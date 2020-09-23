@@ -1,0 +1,19 @@
+Python3爬虫抓取抓取操作的两个库:
+
+1. urllib
+
+import urllib.request
+response = urllib.request.urlopen('https://blog.csdn.net/weixin_43499626')
+print(response.read().decode('utf-8'))
+#带参数的urllib
+url = 'https://blog.csdn.net/weixin_43499626'
+url = url + '?' + key + '=' + value1 + '&' + key2 + '=' + value2
+
+2. requests
+
+import requests
+# get请求
+response = requests.get(url='https://blog.csdn.net/weixin_43499626') 
+print(response.text)   #打印解码后的返回数据
+# 带参数的requests get请求
+response = requests.get(url='https://blog.csdn.net/weixin_43499626', params={'key1':'value1', 'key2':'value2'})
